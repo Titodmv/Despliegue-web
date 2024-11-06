@@ -16,7 +16,12 @@ node -v
 ```
 sudo apt install npm
 ```
->Instalar ngix
+> Instalar Ngix
 ```
 sudo apt install nginx
+```
+> Iniciar y habilitar Ngix
+```
+sudo systemctl start nginx
+sudo systemctl enable nginx
 ```
