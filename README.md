@@ -1,4 +1,4 @@
-# Instalar servicios principales
+# Instalar servicios principales webServer "nginx" servidor de aplicaciones "tomcat"
 > Actualizar equipo
 ```
 sudo apt-get update
