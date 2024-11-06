@@ -1,4 +1,4 @@
-# Instalar Nginx
+# Instalar servicios principales
 > Actualizar equipo
 ```
 sudo apt-get update
@@ -24,4 +24,13 @@ sudo apt install nginx
 ```
 sudo systemctl start nginx
 sudo systemctl enable nginx
+```
+> Instalar Java
+```
+sudo systemctl start nginx
+```
+> Instalar Tomcat
+```
+sudo apt-cache search tomcat
+sudo apt install tomcat9 tomcat9-admin
 ```
