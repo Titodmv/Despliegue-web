@@ -34,3 +34,10 @@ sudo systemctl start nginx
 sudo apt-cache search tomcat
 sudo apt install tomcat9 tomcat9-admin
 ```
+> Escuchar y cambiar puerto
+```
+ss -ltn
+sudo ufw allow from any to any port 8080 proto tcp
+```
+
+
