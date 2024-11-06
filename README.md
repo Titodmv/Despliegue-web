@@ -25,9 +25,9 @@ sudo apt install nginx
 sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
-> Instalar Java
+> Instalar Java 11-jre
 ```
-sudo systemctl start nginx
+sudo apt install openjdk-11-jre-headless
 ```
 > Instalar Tomcat
 ```
