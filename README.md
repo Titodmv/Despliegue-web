@@ -3,6 +3,4 @@
 * lista1
 * lista2
 
-`
-  Texto
-`
+`Texto` color: `#ffffff`
