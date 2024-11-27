@@ -24,3 +24,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```
 sudo docker -v
 ```
+## Clonar un repositorio
+> Usar git clone
+```
+git clone <url> <ruta>
+```
