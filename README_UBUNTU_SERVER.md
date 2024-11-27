@@ -55,3 +55,11 @@ EXPOSE <puerto>
 #Encender el proyecto
 CMD [ "npm", "start" ]
 ```
+## Hacer build desde la carpeta del proyecto
+```
+sudo docker build -t <nombre de la imagen> .
+```
+## Correr la imagen
+```
+sudo docker run -p <puertoMaquina>:<puertoDelProyecto> <imagen del proyecto>
+```
