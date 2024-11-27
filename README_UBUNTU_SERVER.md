@@ -32,17 +32,16 @@ git clone <url> <ruta>
 ## Crear un dockerfile
 ```
 #Importar imagen base del proyecto
-FROM alpine:latest
+FROM <imagen base>
 
 #Comandos que se ejecutaran, necesarios para que funcione react
-RUN sudo apt install node
-RUN sudo apt install npm
+RUN apk add --no-cache nodejs npm
 
 #Directorio de trabajo
 WORKDIR /aplicacion
 
 #Copiamos el json para instalar las dependencias
-COPY package.json ./
+COPY package.json package-lock.json ./
 
 #Instalar las dependencias js
 RUN npm install
@@ -51,7 +50,7 @@ RUN npm install
 COPY . .
 
 #Puerto
-EXPOSE 3000
+EXPOSE <puerto>
 
 #Encender el proyecto
 CMD [ "npm", "start" ]
