@@ -29,3 +29,30 @@ sudo docker -v
 ```
 git clone <url> <ruta>
 ```
+## Crear un dockerfile
+```
+#Importar imagen base del proyecto
+FROM alpine:latest
+
+#Comandos que se ejecutaran, necesarios para que funcione react
+RUN sudo apt install node
+RUN sudo apt install npm
+
+#Directorio de trabajo
+WORKDIR /aplicacion
+
+#Copiamos el json para instalar las dependencias
+COPY package.json ./
+
+#Instalar las dependencias js
+RUN npm install
+
+#Copiar el projecto en la base del proyecto
+COPY . .
+
+#Puerto
+EXPOSE 3000
+
+#Encender el proyecto
+CMD [ "npm", "start" ]
+```
