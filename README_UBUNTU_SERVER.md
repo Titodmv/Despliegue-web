@@ -63,3 +63,7 @@ sudo docker build -t <nombre de la imagen> .
 ```
 sudo docker run -p <puertoMaquina>:<puertoDelProyecto> <imagen del proyecto>
 ```
+##Eliminar todos los procesos de docker
+```
+sudo docker rm -f $(sudo docker ps -aq)
+```
