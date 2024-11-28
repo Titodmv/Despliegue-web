@@ -71,3 +71,7 @@ sudo docker rm -f $(sudo docker ps -aq)
 ```
 sudo docker network create <nombre_red>
 ```
+```
+docker run --name frontend --network my_network -p 3000:3000 -d frontend_image
+docker run --name jsondb --network my_network -p 5000:5000 -d jsondb_image
+```
