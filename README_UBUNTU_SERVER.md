@@ -63,15 +63,27 @@ sudo docker build -t <nombre de la imagen> .
 ```
 sudo docker run -p <puertoMaquina>:<puertoDelProyecto> <imagen del proyecto>
 ```
-## Eliminar todos los procesos de docker
+## Comandos especiales para docker
+### Eliminar todos los procesos de docker
 ```
 sudo docker rm -f $(sudo docker ps -aq)
 ```
-## Crear una red de contenedores dockers
+### Creear una red de contenedores dockers
 ```
 sudo docker network create <nombre_red>
 ```
 ```
-docker run --name frontend --network my_network -p 3000:3000 -d frontend_image
-docker run --name jsondb --network my_network -p 5000:5000 -d jsondb_image
+sudo docker run --network my_network -p 3000:3000 -d frontend_image
+sudo docker run --network my_network -p 5000:5000 -d jsondb_image
 ```
+### Eliminar todas las redes
+```
+sudo docker network prune -f
+```
+
+### Eliminar todas las imagenes
+```
+sudo docker rmi -f $(sudo docker images -q)
+```
+
+
