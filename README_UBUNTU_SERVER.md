@@ -1,5 +1,6 @@
 # Prueba
 ## Instalar Docker
+Información sacada de la pagina oficial de Docker para ubuntu**https://docs.docker.com/engine/install/ubuntu/**
 > Añadir la key oficial de docker
 ```
 sudo apt-get update
