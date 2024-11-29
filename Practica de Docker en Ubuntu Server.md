@@ -1,6 +1,6 @@
 # Prueba
 ## Instalar Docker
-Información sacada de la pagina oficial de Docker para ubuntu**https://docs.docker.com/engine/install/ubuntu/**
+Información sacada de la pagina oficial de Docker para ubuntu **https://docs.docker.com/engine/install/ubuntu/**
 > Añadir la key oficial de docker
 ```
 sudo apt-get update
@@ -28,20 +28,20 @@ sudo docker -v
 ## Clonar un repositorio
 > Usar git clone
 ```
-git clone <url> <ruta>
+git clone <url> <ruta_destino_del_equipo>
 ```
-## Crear un dockerfile
+## Crear un dockerfile en la carpeta base del proyecto
 ```
 #Importar imagen base del proyecto
-FROM <imagen base>
+FROM alphine:latest
 
 #Comandos que se ejecutaran, necesarios para que funcione react
 RUN apk add --no-cache nodejs npm
 
-#Directorio de trabajo
+#Directorio de trabajo que se crear en el contenedor docker
 WORKDIR /aplicacion
 
-#Copiamos el json para instalar las dependencias
+#Copiamos el json para instalar las dependencias y el lock en caso de que exista
 COPY package.json package-lock.json ./
 
 #Instalar las dependencias js
@@ -50,8 +50,8 @@ RUN npm install
 #Copiar el projecto en la base del proyecto
 COPY . .
 
-#Puerto
-EXPOSE <puerto>
+#Puerto que usara el contenedor docker
+EXPOSE 3000
 
 #Encender el proyecto
 CMD [ "npm", "start" ]
