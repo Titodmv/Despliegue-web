@@ -1,5 +1,4 @@
-# Prueba
-## Instalar Docker
+# Instalar Docker
 Información sacada de la pagina oficial de Docker para ubuntu **https://docs.docker.com/engine/install/ubuntu/**
 > Añadir la key oficial de docker
 ```
@@ -25,12 +24,12 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```
 sudo docker -v
 ```
-## Clonar un repositorio
+# Clonar un repositorio
 > Usar git clone
 ```
 git clone <url> <ruta_destino_del_equipo>
 ```
-## Crear un dockerfile en la carpeta base del proyecto
+# Crear un dockerfile en la carpeta base del proyecto
 ```
 #Importar imagen base del proyecto
 FROM alphine:latest
@@ -56,19 +55,19 @@ EXPOSE 3000
 #Encender el proyecto
 CMD [ "npm", "start" ]
 ```
-## Hacer build desde la carpeta del proyecto (este paso ahora no es necesario hacerlo)
+# Hacer build desde la carpeta del proyecto (este paso ahora no es necesario hacerlo)
 ```
 sudo docker build -t <nombre que le daremos a la imagen> .
 ```
-## Confirmar que la imagen se a creado (este paso ahora no es necesario hacerlo)
+# Confirmar que la imagen se a creado (este paso ahora no es necesario hacerlo)
 ```
 sudo docker images
 ```
-## Correr la imagen (este paso ahora no es necesario hacerlo)
+# Correr la imagen (este paso ahora no es necesario hacerlo)
 ```
 sudo docker run -p <puertoMaquina>:<puertoDelProyecto> <imagen del proyecto> 
 ```
-## Crear un docker-compose.yaml en la carpeta donde se encuentren los dos proyectos
+# Crear un docker-compose.yaml en la carpeta donde se encuentren los dos proyectos
 Recordad que se ha de respetar los espacios y tabulaciones, en caso contrario no funcionara el compose
 ```
 #La version no es necesaria declararla.
@@ -109,13 +108,13 @@ networks:
   mi_red:
     driver: bridge
 ```
-## Levantar el docker compose
+# Levantar el docker compose
 -d es para que se ejecute en segundo plano para poder seguir usando la consola
 ```
 sudo docker compose up -d
 ```
 Una vez hecho esto ya podemos acceder al servicio introduciendo la ip del servidor y el puerto de 3000 que es el de react
-## Comandos especiales para docker
+# Comandos especiales para docker
 > Eliminar todos los procesos de docker
 ```
 sudo docker rm -f $(sudo docker ps -aq)
