@@ -69,6 +69,7 @@ sudo docker run -p <puertoMaquina>:<puertoDelProyecto> <imagen del proyecto>
 ```
 # Crear un docker-compose.yaml en la carpeta donde se encuentren los dos proyectos
 Recordad que se ha de respetar los espacios y tabulaciones, en caso contrario no funcionara el compose
+El docker-compose.yaml se encarga de crear las imagenes de los servicios, buscando su dockerfile y de levantarlos. Es un orquesatdor de docker.
 ```
 #La version no es necesaria declararla.
 #Primero declaramos los servicios que se van a levantar
@@ -109,7 +110,7 @@ networks:
     driver: bridge
 ```
 # Levantar el docker compose
--d es para que se ejecute en segundo plano para poder seguir usando la consola
+El -d es para que se ejecute en segundo plano para poder seguir usando la consola
 ```
 sudo docker compose up -d
 ```
