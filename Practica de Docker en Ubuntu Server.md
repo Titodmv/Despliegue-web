@@ -32,7 +32,7 @@ git clone <url> <ruta_destino_del_equipo>
 # Crear un dockerfile en la carpeta base del proyecto
 ```
 #Importar imagen base del proyecto
-FROM alphine:latest
+FROM alpine:latest
 
 #Comandos que se ejecutaran, necesarios para que funcione react
 RUN apk add --no-cache nodejs npm
