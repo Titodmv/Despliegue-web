@@ -109,6 +109,66 @@ networks:
   mi_red:
     driver: bridge
 ```
+# Opcion 2
+```
+services:
+  react:
+    build:
+      context: ./react
+      dockerfile: dockerfile
+    container_name: react
+    ports:
+      - "3000:3000"
+    depends_on:
+      - node
+    stdin_open: true
+    networks:
+      - mi_red
+    environment:
+      REACT_APP_BASE_URL: "http://172.50.40.143:5000/tasks"
+
+  node:
+    build: 
+      context: ./node
+      dockerfile: dockerfile
+    container_name: node
+    ports:
+      - "5000:5000"
+    volumes:
+      - ${PWD}/node/tasks.json:data:/data/tasks.json
+    networks:
+      - mi_red
+
+  react2:
+    build:
+      context: ./react
+      dockerfile: dockerfile
+    container_name: react2
+    ports:
+      - "3001:3000"
+    depends_on:
+      - node2
+    stdin_open: true
+    networks:
+      - mi_red2
+    environment:
+      REACT_APP_BASE_URL: "http://172.50.40.143:5001/tasks"
+
+  node2:
+    build: 
+      context: ./node
+      dockerfile: dockerfile
+    container_name: node2
+    ports:
+      - "5001:5000"
+    networks:
+      - mi_red2
+networks:
+  mi_red:
+    driver: bridge
+  mi_red2:
+    driver: bridge
+```
 # Levantar el docker compose
 El -d es para que se ejecute en segundo plano para poder seguir usando la consola
 ```
